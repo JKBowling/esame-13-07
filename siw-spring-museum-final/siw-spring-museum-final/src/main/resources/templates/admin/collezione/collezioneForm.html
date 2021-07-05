@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='home')"></head>
+	<body>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+		<form th:action = "@{/admin/collezione}" method = "POST" th:object = "${collezione}">
+			<div class = "container">
+				<div class = "dati">
+					<span>*Nome</span>
+					<span><input type = "text" th:field = "*{nome}" required/></span>
+				</div>
+				<div class = "dati">
+					<span>*Descrizione</span>
+					<span><input type = "text" th:field = "*{descrizione}" required/></span>
+				</div>
+				<div class = "dati">
+					<span>*Codice</span>
+					<span><input type = "text" th:field = "*{code}" required/></span>
+				</div>
+				<div class = "dati">
+					<span>*Curatore</span>
+					<select name = "curator">
+						<option th:each = "curatore : ${curatori}"
+								th:value = "|${curatore.matricola} ${curatore.nome} ${curatore.cognome}|" 
+								th:text = "|${curatore.matricola} ${curatore.nome} ${curatore.cognome}|">
+						</option>
+					</select>	
+				</div>
+				<div class = "btn">
+					<span><button type = "submit">Inserisci</button></span>
+				</div>
+				<span class = "back"><a class = "back" th:href="@{/admin}">Torna indietro</a></span>
+			</div>
+		</form>
+	</body>
+</html>	
+					
+			

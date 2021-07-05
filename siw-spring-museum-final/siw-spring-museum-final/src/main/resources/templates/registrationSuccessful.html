@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='MAA | Registration Successful')"></head>
+	<body>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+		<div  class = "success">
+			<h1 class = "success"> Registrazione avvenuta con successo! </h1>
+			<a th:href = "@{/index}"> Torna alla home page </a>
+			<a th:href = "@{/login}"> Effettua il login </a>
+		</div>
+		<footer th:replace="fragments/base.html :: footer"></footer>
+	</body>
+</html>

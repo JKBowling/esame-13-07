@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='home')"></head>
+	<body>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+		<form th:action = "@{/admin/curatore}" method = "POST" th:object = "${curatore}">
+			<div class = "container">
+				<div class = "dati">
+					<span>*Nome</span>
+					<span><input type = "text" th:field = "*{nome}" required/></span>
+				</div>
+				<div class = "dati">
+					<span>*Cognome</span>
+					<span><input type = "text" th:field = "*{cognome}" required/></span>
+				</div>
+				<div class = "dati">
+					<span>*Luogo di nascita</span>
+					<span><input type = "text" th:field = "*{luogoNascita}" required/></span>
+				</div>
+				<div class = "dati">
+					<span>*Data di nascita</span>
+					<span><input type = "date" th:field = "*{dataNascita}" required/></span>
+				</div>
+				<div class = "dati">
+					<span>*Email</span>
+					<span><input type = "text" th:field = "*{email}" required/></span>
+				</div>
+				<div class = "dati">
+					<span>*Telefono</span>
+					<span><input type = "text" th:field = "*{telefono}" required/></span>
+				</div>
+				<div class = "dati">
+					<span>*Matricola</span>
+					<span><input type = "text" th:field = "*{matricola}" required/></span>
+				</div>
+				<div class = "btn">
+					<span><button type = "submit">Inserisci</button></span>
+				</div>
+				<span class = "back"><a class = "back" th:href="@{/admin}">Torna indietro</a></span>
+			</div>
+		</form>
+
+	</body>
+</html>	
+					
+			

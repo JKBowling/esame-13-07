@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='MAA | Dettaglio artista')"></head>
+	<body>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+		<div id="intestazione"><p>INFORMAZIONI UTILI</p></div>
+		<div id="info-container">
+			<div class="info">
+				<p class="title">DOVE SIAMO:</p>
+				<ul class="utili">
+					<li class="end">Via: Via Poltorrea 14;</li>
+					<li class="end">Comune:Fiano Romano;</li>
+					<li class="end">Provincia: Roma;</li>
+					<li class="end">Indicazioni stradali: km 50 della Via Salaria;</li>
+				</ul>
+			</div>
+			<div class="info">
+				<p class="title">CONTATTI:</p>
+				<ul class="utili">
+					<li class="end"><a href="https://it-it.facebook.com/" id = "ext1" class="fa fa-facebook"></a> Facebook: Museo di Arte Artistica;</li>
+					<li class="end"><a href="https://www.instagram.com/accounts/login/" id = "ext2" class="fa fa-instagram"></a> Instagram: MuseoDiArteArtistica;</li>
+					<li class="end">	Cellulare: +39 331 1234567;</li>
+					<li class="end">	Telefono: 0637 23345;</li>
+					<li class="end">	Email: <p id="email">museodiarteartisticaroma@gmail.com</p></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

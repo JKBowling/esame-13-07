@@ -1,0 +1,21 @@
+<div id = "popup1" class = "overlay" th:fragment = "logger">
+	<form th:action = "@{/login}" method = "POST" class = "popup">
+		<div class = "container">
+			<a class="close" href="#">&times;</a>
+			<div class = "anag">
+				<div class = "dati">
+					<input name = "username" type = "text" placeholder = "Username" required/>
+				</div>
+				<div class = "dati">
+					<input name = "password" type = "password" placeholder = "Password" required/>
+				</div>
+			</div>
+			<div class = "btn">
+				<button id = "login" type = "submit">Login</button>
+			</div>
+			<div class = "signup">
+				Nuovo utente?<a th:href = "@{/register}" class = "sign">Registrati ora</a>
+			</div>
+		</div>
+	</form>
+</div>					

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:fragment="headerfiles(title)">
+		<th:block th:fragment="baseContent">
+			<meta charset="UTF-8" />
+			<link th:href="@{/css/index.css}" rel="stylesheet">
+			<link th:href="@{/css/header.css}" rel="stylesheet">
+			<link th:href="@{/css/footer.css}" rel="stylesheet">
+			<link th:href="@{/css/login.css}" rel="stylesheet">
+			<link th:href="@{/css/artista.css}" rel="stylesheet">
+			<link th:href="@{/css/artisti.css}" rel="stylesheet">
+			<link th:href="@{/css/admin.css}" rel="stylesheet">
+			<link th:href="@{/css/opera.css}" rel="stylesheet">
+			<link th:href="@{/css/table.css}" rel="stylesheet">
+			<link th:href="@{/css/collezione.css}" rel="stylesheet">
+			<link th:href="@{/css/info.css}" rel="stylesheet">
+			<link th:href="@{/css/generic.css}" rel="stylesheet">
+			<link rel="preconnect" href="https://fonts.gstatic.com">
+			<link href="https://fonts.googleapis.com/css2?family=Almendra+SC&display=swap" rel="stylesheet">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			<meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+			<title th:text="${title}">titolo della pagina</title>
+		</th:block>	
+	</head>
+	<body>
+		<header id = "intestazione-start" th:fragment="intestazione">
+			<div class = "log" sec:authorize = "isAuthenticated()">
+					Ciao, <span sec:authentication = "name"> username </span>
+					<a sec:authorize="hasAuthority('ADMIN')" th:href = "@{/admin}"> Area riservata </a>
+					<a th:href = "@{/logout}"> Logout </a>
+				</div>
+			<div class = "log" sec:authorize = "isAnonymous()">
+				<a href = "#popup1"> Accedi </a>
+				<a th:href = "@{/register}"> Registrati </a>
+			</div>
+			<div id = "wrapper">			
+				<nav th:fragment = "navigazione">
+					<ul class = "barra">
+						<span sec:authorize = "isAuthenticated()"><a th:href = "@{/index}"> <img id="logo" src="/images/logo.png" alt="Museo di Arte Artistica" /></a></span> 
+						<span sec:authorize = "isAnonymous()"><a th:href = "@{/index}"> <img id="logo" src="/images/logo.png" alt="Museo di Arte Artistica" /></a></span>
+						<li class = "navig"><a th:href="@{/artisti}">Autori</a></li>
+						<li class = "navig"><a th:href="@{/opere}">Opere</a></li>
+						<li class = "navig"><a th:href="@{/collezioni}">Collezioni</a></li>
+						<li class = "navig"><a th:href="@{/informazioni}">Informazioni</a></li>
+					</ul>
+				</nav>
+				<div th:replace = "fragments/loginForm.html :: logger"></div>
+			</div>		
+		</header>
+	
+	<footer  th:fragment="footer" id="footer">
+		<h3> made by Oliviero Caico &amp; Matteo Carnebella, SIW 2021 </h3> 
+	</footer>
+</body>
+</html>

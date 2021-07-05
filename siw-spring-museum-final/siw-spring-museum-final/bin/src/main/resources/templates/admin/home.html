@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='SIW')"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	<div id = "cont">
+	<h1>Menu Amministratore</h1>
+    <div id = "menu">
+    	<div class = "opt">
+    		<h3> Artista </h3>
+    		<ul class = "el">
+    			<li><a class = "el" th:href="@{/artisti}">Elenco artisti</a></li>
+    			<li><a class = "el" th:href="@{/admin/addArtista}">Inserisci nuovo artista</a></li>
+    			<li><a class = "el" href = "#">Rimuovi artista</a></li>	
+    		</ul>
+    	</div>
+    	<div class = "opt">
+    		<h3> Opere </h3>
+	   		<ul class = "el">
+				<li><a class = "el" th:href="@{/opere}">Elenco opere</a></li>
+				<li><a class = "el" th:href="@{/admin/addOpera}">Inserisci nuova opera</a></li>
+				<li><a class = "el" href = "#">Rimuovi opera</a></li>	
+	   		</ul>
+    	</div>
+    	<div class = "opt">
+    		<h3> Collezioni </h3>
+    		<ul class = "el">
+				<li class = "el"><a class = "el" th:href="@{/collezioni}">Elenco collezioni</a></li>
+				<li class = "el"><a class = "el" th:href="@{/admin/addCollezione}">Inserisci nuova collezione</a></li>
+				<li><a class = "el" href = "#">Rimuovi collezione</a></li>	
+    		</ul>
+    	</div>
+    	<div class = "opt">
+    		<h3> Curatori </h3>
+	   		<ul class = "el">
+				<li><a class = "el" href="#">Elenco curatori</a></li>
+				<li><a class = "el" href="#">Inserisci nuovo curatore</a></li>
+				<li><a class = "el" href = "#">Rimuovi curatore</a></li>	
+	   		</ul>
+    	</div>
+    </div>
+	</div>
+</body>
+</html>

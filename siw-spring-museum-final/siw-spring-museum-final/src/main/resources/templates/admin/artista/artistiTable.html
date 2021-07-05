@@ -1,0 +1,27 @@
+<html xmlns:th = "http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='home')"></head>
+	<body>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+		<div class = "cont">
+			<table class = "tab">
+				<tr>
+					<th class = "props">Nome</th>
+					<th class = "props">Cognome</th>
+					<th class = "props">Nato a</th>
+					<th class = "props">Morto a</th>
+					<th class = "props">Nazione</th>
+					<th class = "props">Codice</th>
+				</tr>		
+				<tr th:each = "artista : ${artisti}">
+					<td class = "infoTable" th:text = "${artista.nome}">qui-nome</td>
+					<td class = "infoTable" th:text = "${artista.cognome}">qui-cognome</td>
+					<td class = "infoTable" th:text = "${artista.luogoNascita}">nato-a</td>
+					<td class = "infoTable" th:text = "${artista.luogoMorte}">morto-a</td>
+					<td class = "infoTable" th:text = "${artista.nazione}">qui-nazione</td>
+					<td class = "infoTable" th:text = "${artista.code}">qui-codice</td>
+				</tr>
+			</table>
+			<span class = "back"><a class = "back" th:href="@{/admin}">Torna indietro</a></span>
+		</div>
+	</body>
+</html>

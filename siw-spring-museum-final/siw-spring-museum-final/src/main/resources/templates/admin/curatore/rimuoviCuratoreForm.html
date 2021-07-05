@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='home')"></head>
+	<body>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+		<form th:action = "@{/admin/rimuoviCuratore}" method = "POST">
+			<div class = "container">
+				<div class = "dati">
+					<span>Curatore da rimuovere</span>
+					<select name = "curatore">
+						<option th:each = "curatore : ${curatori}"
+								th:value = "|${curatore.nome} ${curatore.cognome}|" 
+								th:text = "|${curatore.nome} ${curatore.cognome}|">
+						</option>
+					</select>	
+				</div>
+				<p> ATTENZIONE! RIMUOVENDO UN CURATORE VERRANNO </p>
+				<p> RIMOSSE TUTTE LE COLLEZIONI A LUI ASSOCIATE! </p>
+				<div class = "btn">
+					<span><button type = "submit">Rimuovi</button></span>
+				</div>
+				<span class = "back"><a class = "back" th:href="@{/admin}">Torna indietro</a></span>
+			</div>
+		</form>
+	</body>
+</html>

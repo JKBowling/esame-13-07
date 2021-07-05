@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Almendra+SC&display=swap" rel="stylesheet">
+		<style>body{
+			background-image: url("/images/error.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-attachment: fixed;
+			font-family: 'Almendra SC', serif;
+			color: white;
+		}
+		div{
+			text-align: center;
+		}</style>
+	</head>
+	<body>
+		<div>
+			<h1> Ops, qualcosa è andato storto... </h1>
+			<h2> Sembra esserci un problema con la pagina richiesta
+				(<span th:text = "${path}" />).
+			</h2>
+			<p th:text="${'Details: ' + message}" />
+	      	<p th:text="${'Status: ' + status}" />
+	      	<a th:href = "@{/index}"> Torna alla home page </a>
+		</div>	
+	</body>
+</html>
+	

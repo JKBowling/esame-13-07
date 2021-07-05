@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='home')"></head>
+	<body>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+		<h1 class = "yes"> Opera aggiunta correttamente </h1>
+		<a th:href = "@{/admin/addOpera}"> Aggiungi un'altra opera </a>
+		<a th:href = "@{/admin}"> Menu Amministratore </a>
+		<a th:href = "@{/admin/opere}"> Lista delle opere </a>
+	</body>
+</html>		

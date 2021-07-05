@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='MAA | Register')"></head>
+	<body>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+		<form th:action = "@{/register}" method = "POST">
+			<div class = "container">
+				<div class = "dati">
+					<span>Nome</span>
+					<span><input name = "nome" type = "text" required/></span>
+				</div>
+				<div class = "dati">
+					<span>Cognome</span>
+					<span><input name = "cognome" type = "text" required/></span>
+				</div>
+				<div class = "dati">
+					<span>Cellulare(facoltativo)</span>
+					<span><input name = "cellulare" type = "text"/></span>
+				</div>
+				<div class = "dati">
+					<span>Username</span>
+					<span><input name = "username" type = "text" required/></span>
+				</div>
+				<div class = "dati">
+					<span>Password</span>
+					<span><input name = "password" type = "password" required/></span>
+				</div>
+				<div class = "btn">
+					<span><button type = "submit">Registrati</button></span>
+				</div>
+			</div>
+		</form>
+		<footer th:replace="fragments/base.html :: footer"></footer>
+	</body>
+</html>	
+					
+			

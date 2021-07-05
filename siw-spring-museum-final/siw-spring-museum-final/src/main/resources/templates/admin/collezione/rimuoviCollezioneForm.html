@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='home')"></head>
+	<body>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+		<form th:action = "@{/admin/rimuoviCollezione}" method = "POST">
+			<div class = "container">
+				<div class = "dati">
+					<span>Collezione da rimuovere</span>
+					<select name = "collezione">
+						<option th:each = "collezione : ${collezioni}"
+								th:value = "|${collezione.nome}|" 
+								th:text = "|${collezione.nome}|">
+						</option>
+					</select>
+				</div>
+				<p> ATTENZIONE! RIMUOVENDO UNA COLLEZIONE VERRANNO </p>
+				<p> RIMOSSE TUTTE LE OPERE AD ESSA ASSOCIATE! </p>
+				<div class = "btn">
+					<span><button type = "submit">Rimuovi</button></span>
+				</div>
+				<span class = "back"><a class = "back" th:href="@{/admin}">Torna indietro</a></span>
+			</div>
+		</form>
+	</body>
+</html>

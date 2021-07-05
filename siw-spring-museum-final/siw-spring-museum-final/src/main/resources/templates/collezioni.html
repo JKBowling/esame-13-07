@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='MAA | Collezioni')">
+	
+	</head>
+	<body>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+			<p id="par">Le nostre collezioni</p>
+			<div id="immaginiOpere">
+				<span class="colonne" th:each = "collezione : ${collezioni}">
+					<a th:href = "@{'/collezione' + '/' + ${collezione.id}}">
+						<img class="ritratto" th:src="@{${'/images/collezioni/' + collezione.nome + '.jpg'}}"/>
+					</a>
+					<a id="nomeGeneric" th:href = "@{'/collezione' + '/' + ${collezione.id}}"  style="text-transform: uppercase;" th:text = "|${collezione.nome}|">qui-nome-artista</a>
+				</span>
+			</div>
+		<footer th:replace="fragments/base.html :: footer"></footer>
+	</body>
+</html>

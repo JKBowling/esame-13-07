@@ -1,0 +1,30 @@
+<html xmlns:th = "http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='home')"></head>
+	<body>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+		<div class = "cont">
+			<table class = "tab">
+				<tr>
+					<th class = "props">Titolo</th>
+					<th class = "props">Anno di Realizzazione</th>
+					<th class = "props">Codice</th>
+					<th class = "props">Collezione</th>
+					<th class = "props">Autore</th>
+				</tr>		
+				<tr th:each = "opera : ${opere}">
+					<td class = "infoTable" th:text = "${opera.titolo}">qui-titolo</td>
+					<td class = "infoTable" th:text = "${opera.annoRealizzazione}">qui-anno</td>
+					<td class = "infoTable" th:text = "${opera.code}">qui-codice</td>
+					<div th:if = "${opera.collezione != null}">
+						<td class = "infoTable" th:text = "${opera.collezione.nome}">qui-collezione</td>
+					</div>
+					<div th:unless = "${opera.collezione != null}">
+						<td class = "infoTable">Nessuna</td>
+					</div>
+					<td class = "infoTable" th:text = "${opera.autore.nome} + ' ' + ${opera.autore.cognome}">qui-autore</td>
+				</tr>
+			</table>
+			<span class = "back"><a class = "back" th:href="@{/admin}">Torna indietro</a></span>
+		</div>
+	</body>
+</html>

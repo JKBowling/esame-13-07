@@ -1,0 +1,29 @@
+<html xmlns:th = "http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='home')"></head>
+	<body>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+		<div class = "cont">
+			<table class = "tab">
+				<tr class = "props">
+					<th class = "props">Nome</th>
+					<th class = "props">Cognome</th>
+					<th class = "props">Nato a</th>
+					<th class = "props">Nato il</th>
+					<th class = "props">Email</th>
+					<th class = "props">Telefono</th>
+					<th class = "props">Matricola</th>
+				</tr>		
+				<tr th:each = "curatore : ${curatori}">
+					<td class = "infoTable" th:text = "${curatore.nome}">qui-nome</td>
+					<td class = "infoTable" th:text = "${curatore.cognome}">qui-cognome</td>
+					<td class = "infoTable" th:text = "${curatore.luogoNascita}">nato-a</td>
+					<td class = "infoTable" th:text = "${curatore.dataNascita}">nato-il</td>
+					<td class = "infoTable" th:text = "${curatore.email}">email</td>
+					<td class = "infoTable" th:text = "${curatore.telefono}">qui-telefono</td>
+					<td class = "infoTable" th:text = "${curatore.matricola}">qui-matricola</td>
+				</tr>
+			</table>
+			<span class = "back"><a class = "back" th:href="@{/admin}">Torna indietro</a></span>
+		</div>
+	</body>
+</html>

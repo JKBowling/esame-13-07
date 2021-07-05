@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='MAA | Dettaglio opera')"></head>
+	<body>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+		<div id="contenitore-opera">
+			<section  id="single-opera" th:object = "${opera}">
+				<div class="immagins">
+					<img class="quadro" th:src="@{${'/images/opere/' + opera.titolo + '.jpg'}}"/>
+				</div>
+				<div class="descrizione">
+					<p id="nomeO" th:text = "${opera.titolo} + ' (' + ${opera.annoRealizzazione} + ') ' + ', ' + ${opera.autore.nome} + ' ' + ${opera.autore.cognome} " style="text-transform: uppercase;">qui-titolo</p>
+					<p  th:text="${opera.descrizione}">descrizone-opera</p>
+				</div>
+			</section>
+		</div>
+		<footer th:replace="fragments/base.html :: footer"></footer>	
+	</body>
+</html>

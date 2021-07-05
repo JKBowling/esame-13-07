@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='MAA | Dettaglio collezione')"></head>
+	<body>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+		<div id = "collezione_content">
+			<p id="lista">Opere esposte in questa collezione</p>
+			<section id="stanza">
+				<div class="parete-opere">
+					<div class="opere" th:each = "opera : ${opereColl}">
+						<a th:href = "@{'/opera' + '/' + ${opera.id}}"><img class="opere" th:src="@{${'/images/opere/'+ opera.titolo + '.jpg'}}"/></a>
+						<a id="linkO" th:href = "@{'/opera' + '/' + ${opera.id}}" th:text = "${opera.titolo}"></a>
+					</div>
+				</div>
+			</section>
+		</div>
+	</body>
+</html>

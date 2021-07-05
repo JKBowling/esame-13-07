@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='Dettaglio artista')"></head>
+	<body>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+		<div class="parete">
+			<p id="par">I nostri artisti</p>
+			<div class="ritratto" th:each = "artista : ${artisti}">
+				<img class="ritratto" th:src="@{${'images/' + artista.nome + '.jpg'}}"/>
+				<a id="nome" th:href = "@{'/artista' + '/' + ${artista.id}}" th:text = "${artista.nome} + ${artista.cognome}">qui-descrizione</a>
+			</div>
+		</div>
+		<footer th:replace="fragments/base.html :: footer"></footer>	
+	</body>
+</html>

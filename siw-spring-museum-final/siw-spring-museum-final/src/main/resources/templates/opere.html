@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='MAA | Opere')">
+	
+	</head>
+	<body>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+			<p id="par">Le nostre opere</p>
+			<div id="immaginiOpere">
+				<span class="colonne" th:each = "opera : ${opere}">
+					<a th:href = "@{'/opera' + '/' + ${opera.id}}"><img class="ritratto" th:src="@{${'/images/opere/' + opera.titolo + '.jpg'}}"/></a>
+					<a id="nomeGeneric" th:href = "@{'/opera' + '/' + ${opera.id}}"  style="text-transform: uppercase;" th:text = "${opera.titolo}">qui-descrizione</a>
+				</span>
+			</div>
+		<footer th:replace="fragments/base.html :: footer"></footer>
+	</body>
+</html>

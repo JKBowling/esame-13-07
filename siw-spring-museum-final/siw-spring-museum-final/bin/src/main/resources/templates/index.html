@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='home')"></head>
+	<body>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+		<p id = "desc"> Le opere più apprezzate di questo mese </p>
+			<section id="immagini">
+				<div class="colonne">
+					<img class="img" alt="Dama con ermellino" src="images/dama_ermellino.jpg"/>
+					<p class="titolo"><em> Dama con ermellino, Leonardo DaVinci</em></p>
+				</div>
+				<div class="colonne">
+					<img class="img" alt="Davide con la testa di Golia" src="images/davide_golia.jpg"/>
+					<p class="titolo"><em>Davide con la testa di Golia, Caravaggio</em></p>
+				</div>
+				<div class="colonne">
+					<img class="img" alt="Ragazza col turbante" src="images/ragazza_turbante.jpg" />
+					<p class="titolo"><em>Ragazza col turbante, Johannes Vermeer</em></p>
+				</div>
+			</section>
+		<footer th:replace="fragments/base.html :: footer"></footer>
+	<body>
+</html>
+	

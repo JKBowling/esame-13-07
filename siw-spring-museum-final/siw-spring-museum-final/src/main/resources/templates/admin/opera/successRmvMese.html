@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='home')"></head>
+	<body>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+		<h1 class = "yes"> Opera del mese rimossa correttamente </h1>
+		<a th:href = "@{/admin/operaMeseRemove}"> Rimuovi un'altra opera del mese</a>
+		<a th:href = "@{/admin}"> Menu Amministratore </a>
+	</body>
+</html>	

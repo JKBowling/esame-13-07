@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:fragment="headerfiles(title)">
+		<meta charset="UTF-8" />
+		<link th:href="@{/css/index.css}" rel="stylesheet">
+		<link th:href="@{/css/header.css}" rel="stylesheet">
+		<link th:href="@{/css/footer.css}" rel="stylesheet">
+		<link th:href="@{/css/login.css}" rel="stylesheet">
+		<link th:href="@{/css/artista.css}" rel="stylesheet">
+		<link th:href="@{/css/artisti.css}" rel="stylesheet">
+		<link th:href="@{/css/admin.css}" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Almendra+SC&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header th:fragment="intestazione">
+			<div class = "log" sec:authorize = "isAuthenticated()">
+					Ciao, <span sec:authentication = "name"> username </span>
+					<a sec:authorize="hasAuthority('ADMIN')" th:href = "@{/admin}"> Area riservata </a>
+					<a th:href = "@{/logout}"> Logout </a>
+				</div>
+			<div class = "log" sec:authorize = "isAnonymous()">
+				<a href = "#popup1"> Accedi </a>
+				<a th:href = "@{/register}"> Registrati </a>
+			</div>
+			<div id = "wrapper">			
+				<nav th:fragment = "navigazione">
+					<ul class = "barra">
+						<a th:href = "@{index}"> <img id="logo" src="/images/logo.png" alt="Museo di Arte Artistica" /> </a> 
+						<li class = "navig"><a th:href="@{/artisti}">Autori</a></li>
+						<li class = "navig"><a href="#">Collezioni</a></li>
+						<li class = "navig"><a href="#">Informazioni</a></li>
+					</ul>
+				</nav>
+				<div th:replace = "fragments/loginForm.html :: logger"></div>
+			</div>		
+		</header>
+	<footer th:fragment="footer" id="footer">
+		<div id="intestazione"><p>INFORMAZIONI UTILI</p></div>
+		<div id="info-container">
+			<div class="info"><p>DOVE SIAMO:</p>
+				<ul class="utili">
+					<li>Via: Via Poltorrea 14;</li>
+					<li>Comune:Fiano Romano;</li>
+					<li>Provincia: Roma;</li>
+					<li>Indicazioni stradali: km 69 della via Lattea;</li>
+				</ul>
+			</div>
+			<div class="info"><p>CONTATTI:</p>
+				<ul class="utili">
+					<li>Facebook: Museo di Arte Artistica;</li>
+					<li>Instagram: MuseoDiArteArtistica;</li>
+					<li>Cellulare: +39 331 1234567;</li>
+					<li>Telefono: 0637 23345;</li>
+					<li>Email: museodiarteartisticaroma@gmail.com</li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+	</body>
+</html>

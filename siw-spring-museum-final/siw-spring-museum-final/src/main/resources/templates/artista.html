@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='MAA | Dettaglio artista')"></head>
+	<body>
+		<header th:replace="fragments/base.html :: intestazione"></header>
+		<div id="artista-content">
+			<section id="section-artista" th:object = "${artista}">
+				<div id="grafica">
+					<img class="volto" th:src="@{${'/images/artisti/' + artista.nome + ' ' + artista.cognome + '.jpg'}}"/>
+					<p id="nomeArt" th:text = "${artista.nome}+' '+ ${artista.cognome}">qui-nome e cognome</p>
+				</div>
+				<div id="biografia">
+					<p class="name-a" th:text = "${artista.nome + ' ' + artista.cognome + ' (' + 
+														artista.luogoNascita + ', ' + artista.dataNascita + 
+														'-' + artista.luogoMorte + ', ' + artista.dataMorte +
+														')'}">Nome e cognome Artista</p>
+					<p class="life" th:text="${artista.vita}"></p>
+				</div>
+			</section>
+			<p id="lista">Opere dell'artista attualmente in esposizione</p>
+			<section id="stanza">
+				<div class="parete-opere">
+					<div class="opere" th:each = "opera : ${opere}">
+						<a th:href = "@{'/opera' + '/' + ${opera.id}}"><img class="opere" th:src="@{${'/images/opere/'+ opera.titolo + '.jpg'}}"/></a>
+						<a id="linkO" th:href = "@{'/opera' + '/' + ${opera.id}}" th:text = "${opera.titolo}"></a>
+					</div>
+				</div>
+			</section>
+		</div>
+		<footer th:replace="fragments/base.html :: footer"></footer>	
+	</body>
+</html>

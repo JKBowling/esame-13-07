@@ -1,0 +1,32 @@
+div.cont{
+	background-color: rgba(229,229,229, 0.3);
+	color: white;
+	margin: 10%;
+	height: auto;
+	width: 100%;
+	height: 100%;
+}
+table, th, td{
+	border: 1px solid white;
+}
+table.tab{
+	width: 50%;
+	height: 50%;
+	text-align: center;
+	margin: auto;
+}
+td.infoTable{
+	color: white;
+}
+
+span.back{
+	display: flex;
+	justify-content: center;
+}
+a.back{
+	color: black;
+}
+
+a.back:hover{
+	color: white;
+}

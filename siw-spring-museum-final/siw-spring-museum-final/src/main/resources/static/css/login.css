@@ -1,0 +1,87 @@
+#wrapper{
+	display: flex;
+	position: relative;
+}
+.overlay {
+	position: absolute;
+	height: 199px;
+	top: 0;
+	right: 0;
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+}
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+}
+a.close{
+	color: black;
+}
+form.popup{
+	display: flex;
+	justify-content: center;
+	margin: 50px auto 300px auto;
+	position: relative;
+}
+div.container{
+	background-color: rgba(229,229,229, 0.3);
+	border: 2px solid black;
+	height: auto;
+	padding: 30px;
+	font-size: 20px;
+	border-radius: 25px;
+}
+div.anag{
+	margin-top: 30px;
+}
+div.dati{
+	display: flex;
+	flex-direction: column;
+	padding: 5px;
+	text-align: center;
+}
+input{
+	height: 100%;
+	width: 100%;
+	border: 2px solid black;
+	margin-bottom: 10px;
+	text-align: center;
+	border-radius: 25px;
+}
+div.btn{
+	display: flex;
+	justify-content: center;
+}
+button{
+	margin: 30px 0;
+	transition-duration: 0.4s;
+	border-radius: 25px;
+}
+#login{
+	width: 75%;
+}
+button:hover{
+	background-color: grey;
+	cursor: pointer;
+}
+div.signup{
+	text-align: center;
+}
+a.sign{
+	text-transform: none;
+	text-decoration: underline;
+	color: black;
+}
+a.sign:hover{
+	color: white;
+}
