@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <th:block th:replace = "fragments/base.html :: bootstrap"></th:block>
+		<style th:replace="fragments/base.html :: style"></style>
+		<style>	h2{
+					padding-top: 5%;
+					padding-left: 15%;
+				}
+		</style>
+	</head>
+	<body>
+	  <th:block th:replace="fragments/base.html :: intestazione"></th:block>
+	  
+	  <h2> Squadra inserita con successo! </h2>
+	  <h3 th:text="${squadra.nome + ' (' + squadra.annoFondazione + ')'}">qui-nome-e-anno-squadra</h3>
+	  <table class="table table-hover table-dark table-bordered">
+		<tr>
+			<th scope="col">Giocatori</th>
+			<th scope="col">Nome</th>
+			<th scope="col">Cognome</th>
+			<th scope="col">Soprannome</th>
+			<th scope="col">Codice Squadra</th>
+		</tr>
+		<tr th:each="giocatore : ${squadra.giocatori}">
+			<td>#</td>
+			<td th:text="${giocatore.nome}">qui-nome</td>
+			<td th:text="${giocatore.cognome}">qui-cognome</td>
+			<td th:text="${giocatore.soprannome}">qui-soprannome</td>
+			<td th:text="${giocatore.codiceSquadra}">qui-codiceSquadra</td>
+		</tr>
+	  </table> 
+	</body>

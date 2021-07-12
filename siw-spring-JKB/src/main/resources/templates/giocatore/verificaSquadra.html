@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <th:block th:replace = "fragments/base.html :: bootstrap"></th:block>
+		<style th:replace="fragments/base.html :: style"></style>
+		<style>	form{
+				padding-top: 5%;
+				padding-left: 20%;
+				width:100%;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+      <th:block th:replace="fragments/base.html :: intestazione"></th:block>
+	  
+	  <h2> Riepilogo dati squadra: </h2>
+	  <form class="row g-3" th:action="@{/controlloSquadra}" method="POST" th:object="${squadra}">
+		  <div class="col-md-6">
+		    <label class="form-label">Nome squadra</label>
+		    <input type = "text" th:field = "*{nome}" class="form-control" readonly>
+		  </div>
+		  <div class="col-md-6">
+		    <label class="form-label">Anno di fondazione</label>
+		    <input type = "text" th:field = "*{annoFondazione}" class="form-control" readonly>
+		  </div>
+		  <div class="col-md-6">
+		    <label class="form-label">Capitano</label>
+		    <input type="text" class="form-control" name="capitano" th:value="${capitano.codiceSquadra}" readonly>
+		    <span th:text="${capitano.nome + ' ' + capitano.cognome}"></span>
+		  </div>
+		  <div class="col-md-6">
+		    <label class="form-label">Giocatore #2</label>
+		    <input type="text" class="form-control" name="giocatore2" th:value="${giocatore2.codiceSquadra}" readonly>
+		    <span th:text="${giocatore2.nome + ' ' + giocatore2.cognome}"></span>
+		  </div>
+		  <div class="col-md-6">
+		    <label class="form-label">Giocatore #3</label>
+		    <input type="text" class="form-control" name="giocatore3" th:value="${giocatore3.codiceSquadra}" readonly>
+		    <span th:text="${giocatore3.nome + ' ' + giocatore3.cognome}"></span>
+		  </div>
+		  <div class="col-md-6">
+		    <label class="form-label">Giocatore #4</label>
+		    <input type="text" class="form-control" name="giocatore4" th:value="${giocatore4.codiceSquadra}" readonly>
+		    <span th:text="${giocatore4.nome + ' ' + giocatore4.cognome}"></span>
+		  </div>
+		  <div class="col-12">
+		    <button type="submit" name="avanti" class="btn btn-dark">Conferma</button>
+		    <button type="submit" name="indietro" class="btn btn-dark">Torna indietro</button>
+		  </div> 
+		</form>
+	</body>
+</html>

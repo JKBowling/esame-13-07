@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<th:block th:replace = "fragments/base.html :: bootstrap"></th:block>
+		<style th:replace="fragments/base.html :: style"></style>
+		<style>div.gruppo{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding-top: 15%;
+			padding-left: 15%;
+		}
+		#login{
+			margin: auto;
+		}
+		</style>
+	</head>
+	<body>
+		<th:block th:replace="fragments/base.html :: intestazione"></th:block>
+		<div class="gruppo">
+			<form th:action="@{/login}" id="login" method = "POST">
+			  <div class="mb-3">
+			    <label class="form-label">Username</label>
+			    <input name="username" type="text" class="form-control">
+			  </div>
+			  <div class="mb-3">
+			    <label class="form-label">Password</label>
+			    <input name="password" type="password" class="form-control">
+			  </div>
+			  <button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+	</body>
+</html>	
